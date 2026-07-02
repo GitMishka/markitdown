@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(docker build -f Dockerfile --build-arg INSTALL_GIT=true -t markitdown-devcontainer-test . 2>&1)",
+      "PowerShell(npx --yes @devcontainers/cli --version)",
+      "PowerShell(npx --yes @devcontainers/cli up --workspace-folder . --log-level debug 2>&1)",
+      "PowerShell(npx --yes @devcontainers/cli up --workspace-folder . --workspace-mount-consistency cached --gpu-availability detect --skip-post-create --update-remote-user-uid-default on --mount-workspace-git-root --include-configuration --include-merged-configuration --experimental-lockfile --mount type=volume,source=vscode,target=/vscode,external=true --log-level debug 2>&1)",
+      "PowerShell(docker rmi markitdown-devcontainer-test:latest)"
+    ]
+  }
+}
